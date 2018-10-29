@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
+RUN sed -Ei 's/^# (deb-src)/\1/' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get --assume-yes install build-essential 
 RUN apt-get --assume-yes install autoconf
@@ -11,8 +12,8 @@ RUN apt-get --assume-yes install libjansson-dev
 RUN apt-get --assume-yes install libhivex-ocaml-dev
 RUN apt-get --assume-yes install linux-image-generic
 RUN apt-get --assume-yes build-dep supermin  
-COPY supermin /
-COPY libguestfs /
+COPY supermin /supermin
+COPY libguestfs /libguestfs
 WORKDIR /supermin
 RUN ./bootstrap
 RUN ./autogen.sh
