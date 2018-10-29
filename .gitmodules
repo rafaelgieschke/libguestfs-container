@@ -1,0 +1,6 @@
+[submodule "libguestfs"]
+	path = libguestfs
+	url = ../libguestfs
+[submodule "supermin"]
+	path = supermin
+	url = https://github.com/libguestfs/supermin
