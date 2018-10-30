@@ -15,7 +15,7 @@ RUN apt-get --assume-yes build-dep supermin
 COPY supermin /supermin
 COPY libguestfs /libguestfs
 WORKDIR /supermin
-RUN ./bootstrap
+RUN .gnulib/gnulib-tool --update
 RUN ./autogen.sh
 RUN make install
 WORKDIR /libguestfs
