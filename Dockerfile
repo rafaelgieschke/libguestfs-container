@@ -11,13 +11,8 @@ RUN apt-get --assume-yes install bison
 RUN apt-get --assume-yes install libjansson-dev
 RUN apt-get --assume-yes install libhivex-ocaml-dev
 RUN apt-get --assume-yes install linux-image-generic
-RUN apt-get --assume-yes build-dep supermin  
-COPY supermin /supermin
+RUN apt-get --assume-yes install supermin
 COPY libguestfs /libguestfs
-WORKDIR /supermin
-RUN .gnulib/gnulib-tool --update
-RUN ./autogen.sh
-RUN make install
 WORKDIR /libguestfs
 RUN ./bootstrap
 RUN ./autogen.sh
