@@ -1,0 +1,6 @@
+version: "2"
+services:
+  shell:
+    privileged: true
+    build: .
+    command: /start --no-fork --trace --verbose

@@ -1,0 +1,2 @@
+#!/bin/sh
+/libguestfs/run /libguestfs/fuse/guestmount -m /dev/:/:bind -a /test.img /mnt "$@"
